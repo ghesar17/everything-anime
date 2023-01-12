@@ -66,7 +66,7 @@ query (
 
 variables = {
     'type': 'ANIME',
-    'startDate': '2016-10-08%'
+    'startDate': '2016%'
 }
 
 url = 'https://graphql.anilist.co'
