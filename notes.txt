@@ -10,3 +10,6 @@
 - 1/12/23
     focusing on functionality behind getting data first
     i want to create a program that finds what anime have been called 'mid' the most in reviews using the anilist api
+    made a lot of progress today, got the program to pull data from the anilist api and had to read a lot of documentation to understand the syntax of GraphQL but it was worth it
+    one thing ive learned from actually getting data about airing anime is that what anime is airing doesnt correlate with this season's anime, because some anime have been airing 
+    for decades, so I need to use the time library to get the current date and somehow use it in my program to prevent that
