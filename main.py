@@ -76,8 +76,3 @@ response = requests.post(url, json={'query': query, 'variables': variables})
 data = response.text
 
 print(data)
-
-
-print("TEST!git")
-
-#oisjfd;aoisjdasd
