@@ -17,7 +17,7 @@ def getSeason():
 
 def getYear():
     today = datetime.now()
-    return today.year
+    return str(today.year)
 
 def getAnime():
     query = '''
@@ -25,31 +25,35 @@ query (
   $page: Int,
   $type: MediaType,
   $format: MediaFormat,
-  $startDate: String,
-  $endDate: String,
   $season: MediaSeason,
+  $genres: [String],
+  $genresExclude: [String],
+  $isAdult: Boolean = false, # Assign default value if isAdult is not included in our query variables 
   $sort: [MediaSort],
-) {
-  Page (page: $page) {
-    pageInfo {
-      total
-      perPage
-      currentPage
-      lastPage
-      hasNextPage
-    }
+)
+
+{
+    Page(page: $page){
+			pageInfo {
+        total
+        currentPage
+        perPage
+        lastPage
+        hasNextPage 
+      }      
+    
     media (
-      startDate_like: $startDate,
-      endDate_like: $endDate,
       season: $season,
       type: $type,
       format: $format,
+      genre_in: $genres,
+      genre_not_in: $genresExclude,
+      isAdult: $isAdult,
       sort: $sort,
-      
     ) {
       id
       title {
-        userPreferred
+        romaji
       }
       type
       format
@@ -62,24 +66,37 @@ query (
         month
         day
       }
-      season
+      endDate {
+        year
+        month
+        day
+      }
       nextAiringEpisode {
         airingAt
         timeUntilAiring
         episode
       }
-    }
-  }
+      coverImage {
+        extraLarge
+        large
+        medium
+        color
+      }
+  	}
+	}
 }
 '''
+
     variables = {
         'type': 'ANIME',
         'season' : getSeason(),
-              
+        'year' : getYear()
     }
+
     url = 'https://graphql.anilist.co'
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
     return data
 
 print(getAnime())
+
