@@ -17,7 +17,7 @@ def getSeason():
 
 def getYear():
     today = datetime.now()
-    return str(today.year)
+    return today.year
 
 def getAnime():
     query = '''
@@ -26,6 +26,8 @@ query (
   $type: MediaType,
   $format: MediaFormat,
   $season: MediaSeason,
+  $seasonYear: Int,
+  $status: MediaStatus
   $genres: [String],
   $genresExclude: [String],
   $isAdult: Boolean = false, # Assign default value if isAdult is not included in our query variables 
@@ -44,6 +46,8 @@ query (
     
     media (
       season: $season,
+      seasonYear: $seasonYear
+      status: $status
       type: $type,
       format: $format,
       genre_in: $genres,
@@ -52,6 +56,8 @@ query (
       sort: $sort,
     ) {
       id
+      season
+      seasonYear
       title {
         romaji
       }
@@ -90,7 +96,8 @@ query (
     variables = {
         'type': 'ANIME',
         'season' : getSeason(),
-        'year' : getYear()
+        'seasonYear' : getYear(),
+        'status' : 'RELEASING'
     }
 
     url = 'https://graphql.anilist.co'
