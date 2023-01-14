@@ -54,7 +54,6 @@ query (
       isAdult: $isAdult,
       sort: $sort,
     ) {
-      id
       season
       seasonYear
       title {
