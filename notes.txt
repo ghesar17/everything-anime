@@ -13,3 +13,9 @@
     made a lot of progress today, got the program to pull data from the anilist api and had to read a lot of documentation to understand the syntax of GraphQL but it was worth it
     one thing ive learned from actually getting data about airing anime is that what anime is airing doesnt correlate with this season's anime, because some anime have been airing 
     for decades, so I need to use the time library to get the current date and somehow use it in my program to prevent that
+
+- 1/13/23
+    finally got the getAnime function to return the proper anime, ones that are airing, started this year and are in this season, it took a lot of staring at the same code to try 
+    understand the syntax and reading a lot of documentation but it was worth it
+    now going to focus on organizing the data and displaying it
+
