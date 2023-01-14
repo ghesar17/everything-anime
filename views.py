@@ -8,12 +8,6 @@ views = Blueprint(__name__,"views")
 def home():
     return render_template('index.html', name='Joe')
 
-@views.route('/profile/')
-def profile():
-    args = request.args
-    name = args.get('name')
-    return render_template('index.html',name=name)
-
 @views.route('/json')
 def get_json():
     return jsonify({'name' : 'Tim', 'coolness' : 10})
