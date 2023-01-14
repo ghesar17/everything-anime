@@ -20,8 +20,9 @@ def getYear():
 
 def getAnime():
     query = '''
-query (
+query getAiringAnime (
   $page: Int,
+  $perPage: Int,
   $type: MediaType,
   $format: MediaFormat,
   $season: MediaSeason,
@@ -34,12 +35,10 @@ query (
 )
 
 {
-    Page(page: $page){
+    Page(page: $page, perPage: $perPage ){
 			pageInfo {
         total
-        currentPage
-        perPage
-        lastPage
+        perPage 
         hasNextPage 
       }      
     
@@ -58,6 +57,7 @@ query (
       seasonYear
       title {
         romaji
+        english
       }
       type
       format
@@ -95,13 +95,14 @@ query (
         'type': 'ANIME',
         'season' : getSeason(),
         'seasonYear' : getYear(),
-        'status' : 'RELEASING'
+        'status' : 'RELEASING',
+        'perPage' : 5,
+        'Page' : 1
+     
     }
 
     url = 'https://graphql.anilist.co'
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
     return data
-
-print(getAnime())
-
+    print(data)

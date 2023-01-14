@@ -19,3 +19,10 @@
     understand the syntax and reading a lot of documentation but it was worth it
     now going to focus on organizing the data and displaying it
 
+    having to deal with hundreds of entries will be overwhelming so I'll just focus on organizing the data for one anime then scale it later
+    
+    began working on getting the actual site for the app using flask
+
+- 1/14/23
+    took a bunch of code from a tutorial about flask and now have a website
+    need to figure out how to get the data on the website though
