@@ -105,4 +105,3 @@ query getAiringAnime (
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
     return data
-    print(data)
