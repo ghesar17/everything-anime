@@ -41,3 +41,8 @@
     my plan is to take user input with the <form> element in html then 
 
 
+- 1/15/23
+    after a bunch of debugging I got the website to take user input and return the correct anime info according
+    to the year and season inputted
+
+    
