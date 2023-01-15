@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 
-def getSeason():
+def getcurrentSeason():
     today = datetime.now()
     month = today.month
     if 1 <= month <= 3:
@@ -15,7 +15,7 @@ def getSeason():
     else:
         return 'FALL'
 
-def getYear():
+def getcurrentYear():
     today = datetime.now()
     return today.year
 
@@ -57,7 +57,6 @@ query getAiringAnime (
       season
       seasonYear
       title {
-        romaji
         english
       }
       type
@@ -104,5 +103,12 @@ query getAiringAnime (
     url = 'https://graphql.anilist.co'
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
+
+
     return data
 
+dict = getAnime('WINTER','2023')['data']['Page']['media']
+for list in dict:
+  for key, value in list.items():
+    print(key,value)
+    print('\n')

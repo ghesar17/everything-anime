@@ -1,18 +1,17 @@
-from data import getAnime
+# from data import getAnime
 
-airing = getAnime()
+# def format_data(season,year):
+#     data = getAnime(season,year)
+#     list = []
+#     for entry in data:
+#         dict = {}
+#         dict['season'] = entry['season']
+#         dict['seasonYear'] = entry['seasonYear']
+#         dict['title'] = entry['title']['english']
+#         dict['format'] = entry['format']
+#         dict['episodes'] = entry['episodes']
+#         dict['popularity'] = entry['popularity']
+#         list.append(dict)
+#     print(list)
 
-for anime in airing['data']['Page']['media']:
-    print('\n\n')
-    print(anime)
-
-
-
-# first_entry = airing['data']['Page']['media']
-
-
-
-# print(first_entry[0]['title'])
-
-# def organize(data):
-#     eng, rom, episodes, format, genres, popularity = 
+# format_data('2023','WINTER')

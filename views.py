@@ -5,13 +5,24 @@ from data import getAnime
 
 views = Blueprint(__name__,"views")
 
-@views.route("/",methods=['POST','GET'])
+@views.route("/",methods=['GET','POST'])
 def home():
     if request.method == 'POST':
         year = request.form['year']
         season = request.form['season'].upper()
-        print(getAnime(season,year))
+        dict = getAnime(season,year)
+        return render_template('anime.html',anime=dict['data']['Page']['media'])
     return render_template('index.html')
+
+# @views.route('/anime',methods=['POST','GET'])
+# def anime():
+#     if request.method == 'POST':
+#         year = request.form['year']
+#         season = request.form['season'].upper()
+#         dict = getAnime(year,season)
+#         return render_template('anime.html',anime=dict)
+        
+
 
 
 @views.route('/json') #adding another slash at the end of '/json' makes it so both /json and /json/ work 

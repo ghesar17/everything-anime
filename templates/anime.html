@@ -22,30 +22,15 @@
     </nav>
 
     <h1>I wonder what anime was popular at that time...</h1>
-        
-        
 
-        <form action = "http://localhost:8000/views" method = "POST">
-                <p> What Year <input type = "text" name = "year" /></p>
-                <p>What Season <input type = "text" name = "season" /></p>
-                <p><input type = "submit" value = "submit" /></p>
-        </form>
+        <table border = 1>
+            {% for entry in anime %}
+               <tr>
+                  <td> {{ entry }} </td>
+               </tr>
+            {% endfor %}
+         </table>
 
-
-
-        <!-- <div id="animediv"></div>
-        <p>
-            What year?: <input type="text" name="user_year"></input>
-        </p> 
-    
-        <p>
-        What season?: <input type="text" name="user_season"></input>
-        </p> 
-    
-        <p><input type = "submit" value = "What was popular?" /></p> -->
-
-    
 
 </body>
 </html>
-
