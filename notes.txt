@@ -26,3 +26,18 @@
 - 1/14/23
     took a bunch of code from a tutorial about flask and now have a website
     need to figure out how to get the data on the website though
+
+    in the future i will definetely learn a framework, as being good in a niche like specific framework is strong
+    for this project im not sure if i really want to learn a framework like django
+
+    going to display the ten most popular shows this season to avoid an 
+    endless stream of shows
+
+    actually going to make it so the website takes in user input, season and year and will return the ten most popular shows from that time
+
+    when you go on anilist and select which year you want to filter by 
+    does it load a new website or just update the elements on the html?
+
+    my plan is to take user input with the <form> element in html then 
+
+

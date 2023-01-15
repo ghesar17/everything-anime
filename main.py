@@ -16,5 +16,3 @@ for anime in airing['data']['Page']['media']:
 
 # def organize(data):
 #     eng, rom, episodes, format, genres, popularity = 
-
-    

@@ -2,6 +2,7 @@ import requests
 from datetime import datetime
 
 
+
 def getSeason():
     today = datetime.now()
     month = today.month
@@ -18,7 +19,7 @@ def getYear():
     today = datetime.now()
     return today.year
 
-def getAnime():
+def getAnime(season,year):
     query = '''
 query getAiringAnime (
   $page: Int,
@@ -93,9 +94,8 @@ query getAiringAnime (
 
     variables = {
         'type': 'ANIME',
-        'season' : getSeason(),
-        'seasonYear' : getYear(),
-        'status' : 'RELEASING',
+        'season' : str(season),
+        'seasonYear' : str(year),
         'perPage' : 5,
         'Page' : 1
      
@@ -105,3 +105,4 @@ query getAiringAnime (
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
     return data
+
