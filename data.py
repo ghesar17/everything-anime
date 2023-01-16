@@ -54,8 +54,6 @@ query getAiringAnime (
       isAdult: $isAdult,
       sort: $sort,
     ) {
-      season
-      seasonYear
       title {
         english
       }
@@ -95,7 +93,7 @@ query getAiringAnime (
         'type': 'ANIME',
         'season' : str(season),
         'seasonYear' : str(year),
-        'perPage' : 5,
+        'perPage' : 50,
         'Page' : 1
      
     }
@@ -103,12 +101,15 @@ query getAiringAnime (
     url = 'https://graphql.anilist.co'
     response = requests.post(url, json={'query': query, 'variables': variables})
     data = response.json()
-
-
+    data = data['data']['Page']['media']
+    # data is a list of dicts
+    data = sorted(data, key=lambda anime: anime['popularity'],reverse=True) 
     return data
 
-dict = getAnime('WINTER','2023')['data']['Page']['media']
-for list in dict:
-  for key, value in list.items():
-    print(key,value)
-    print('\n')
+# def sorter(data):
+#   list = []
+#   for dict in data:
+#     dict.sort('popularity')
+#     list.append(dict)
+#   return list
+

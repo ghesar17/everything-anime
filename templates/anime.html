@@ -24,7 +24,8 @@
     <h1>I wonder what anime was popular at that time...</h1>
 
         <table border = 1>
-            {% for entry in anime %}
+            <!-- anime is a list of dicts -->
+            {% for entry in anime %} 
                <tr>
                   <td> {{ entry }} </td>
                </tr>
