@@ -11,7 +11,7 @@ def home():
         year = request.form['year']
         season = request.form['season'].upper()
         dict = getAnime(season,year)
-        return render_template('anime.html',anime=dict['data']['Page']['media'])
+        return render_template('anime.html',anime=dict)
     return render_template('index.html')
 
 # @views.route('/anime',methods=['POST','GET'])

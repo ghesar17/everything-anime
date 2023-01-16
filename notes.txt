@@ -45,4 +45,11 @@
     after a bunch of debugging I got the website to take user input and return the correct anime info according
     to the year and season inputted
 
+- 1/16/23
+    I think I'll keep journaling my programming journey as I think in the future being able to look back at my progress will be a really rewarding feeling
+    gonna make a new repo for notes 
+    will keep taking notes on this project in this file
+
+        
+
     
