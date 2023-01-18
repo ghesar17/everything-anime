@@ -56,6 +56,7 @@ query getAiringAnime (
     ) {
       title {
         english
+        romaji
       }
       type
       format
@@ -106,3 +107,5 @@ query getAiringAnime (
     data = sorted(data, key=lambda anime: anime['popularity'],reverse=True) 
     data = data[:10]
     return data
+
+print(getAnime('SUMMER','2015'))

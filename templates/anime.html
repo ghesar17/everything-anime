@@ -13,13 +13,21 @@
 </head>
 <body>
     <h1 class="header">I wonder what anime was popular back then...</h1>
-      <table class="table" border = 1>
-            {% for entry in anime %}
-                    <tr>
-                      <td id="title"> {{ entry['title']['english'] }} </td>
-                      <td id='image'> <img src="{{entry['coverImage']['large']}}"> </td>
-                    </tr>
-                    {% endfor %}
+      <table class="table">
+        {% for entry in anime %}
+          <tr>
+            <td class="title"> 
+              {% if entry['title']['english'] %}
+                {{ entry['title']['english']}} 
+              {% elif entry['title']['romaji'] %}
+                {{ entry['title']['romaji']}}
+              {% endif %}
+            </td>
+            <td class='image'> 
+              <img src="{{entry['coverImage']['large']}}"> 
+            </td>
+            </tr>
+        {% endfor %} 
       </table>
 </body>
 </html>
