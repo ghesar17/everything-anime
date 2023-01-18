@@ -50,5 +50,6 @@
     gonna make a new repo for notes 
     will keep taking notes on this project in this file
 
-    
-    
+-1/18/23
+    Added cool css and organized the html to decorate and tidy up the site, actually looks presentable now and took inspiration from Anilist's website
+    At a point where I feel like the project is complete, of course I could add more but this is essentially what I wanted, Im gonna add extra info like episodes and studio though

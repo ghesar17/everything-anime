@@ -54,6 +54,8 @@ query getAiringAnime (
       isAdult: $isAdult,
       sort: $sort,
     ) {
+      season
+      seasonYear
       title {
         english
         romaji
@@ -108,4 +110,4 @@ query getAiringAnime (
     data = data[:10]
     return data
 
-print(getAnime('SUMMER','2015'))
+print(getAnime('FALL','2022'))

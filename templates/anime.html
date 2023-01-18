@@ -12,22 +12,37 @@
   </script>
 </head>
 <body>
-    <h1 class="header">I wonder what anime was popular back then...</h1>
-      <table class="table">
-        {% for entry in anime %}
-          <tr>
-            <td class="title"> 
-              {% if entry['title']['english'] %}
-                {{ entry['title']['english']}} 
-              {% elif entry['title']['romaji'] %}
-                {{ entry['title']['romaji']}}
-              {% endif %}
-            </td>
-            <td class='image'> 
-              <img src="{{entry['coverImage']['large']}}"> 
-            </td>
-            </tr>
-        {% endfor %} 
-      </table>
+  <section class="headerblock">
+    <h1> Popular Anime from </h1>
+  </section>
+  <section class='seasonblock'>
+    <div class='time'>
+        {% if anime[0]['season'] %}
+          {{anime[0]['season']}}
+        {% endif %}
+    </div>
+  </section>
+  <section class="yearblock">
+    <div class='time'> 
+      {% if anime[0]['seasonYear'] %}
+        {{anime[0]['seasonYear']}}
+      {% endif %}
+    </div>
+  </section>
+  
+  <section class="grid"></section>
+    {% for entry in anime %}
+      <div class="title"> 
+        {% if entry['title']['english'] %}
+          {{ entry['title']['english']}} 
+        {% elif entry['title']['romaji'] %}
+          {{ entry['title']['romaji']}}
+        {% endif %}
+      </div>
+      <div class='imagegrid'> 
+        <img src="{{entry['coverImage']['large']}}">
+      </div>
+    {% endfor %} 
+  </section>
 </body>
 </html>
