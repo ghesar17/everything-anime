@@ -50,6 +50,5 @@
     gonna make a new repo for notes 
     will keep taking notes on this project in this file
 
-        
-
+    
     

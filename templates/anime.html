@@ -1,36 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>What's Popular</title>
-
-    <script 
-    type='text/javascript'
-    src="{{ url_for('static',filename='index.js')}}" >
-    </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Popular Anime</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/anime.css') }}">
+  <script>
+   src="index.js"
+  </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar"> 
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-
-    <h1>I wonder what anime was popular at that time...</h1>
-    
-        <table border = 1>
-            <!-- anime is a list of dicts -->
-            {% for entry in anime %} 
-               <tr>
-                  <td> {{ entry }} </td>
-                  <img src="entry[" alt="Girl in a jacket" width="500" height="600"> 
-               </tr>
-            {% endfor %}
+    <h1 class="header">I wonder what anime was popular back then...</h1>
+      <table class="table" border = 1>
+            {% for entry in anime %}
+                    <tr>
+                      <td>  {{ entry }} </td>
+                  
+                    </tr>
+                    {% endfor %}
          </table>
 
 </body>

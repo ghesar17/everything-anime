@@ -100,6 +100,7 @@ query getAiringAnime (
 
     url = 'https://graphql.anilist.co'
     response = requests.post(url, json={'query': query, 'variables': variables})
+    print(response.headers)
     data = response.json()
     data = data['data']['Page']['media']
     # data is a list of dicts
@@ -113,3 +114,4 @@ query getAiringAnime (
 #     list.append(dict)
 #   return list
 
+getAnime('WINTER','2022')

@@ -1,55 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>What's Popular</title>
-
-    <script 
-    type='text/javascript'
-    src="{{ url_for('static',filename='index.js')}}" >
-    </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+  <title>Popular Anime!</title>
+  <script 
+  type='text/javascript'
+  src="{{ url_for('static',filename='index.js')}}" >
+  </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar"> 
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </nav>
-
-    <h1>I wonder what anime was popular at that time...</h1>
-    <style> h1{
-        width: 1000px;
-        
-    }
-        </style>
-        
-
-        <form action = "http://localhost:8000/views" method = "POST">
-                <p> What Year <input type = "text" name = "year" /></p>
-                <p>What Season <input type = "text" name = "season" /></p>
-                <p><input type = "submit" value = "submit" /></p>
-        </form>
-
-
-
-        <!-- <div id="animediv"></div>
-        <p>
-            What year?: <input type="text" name="user_year"></input>
-        </p> 
-    
-        <p>
-        What season?: <input type="text" name="user_season"></input>
-        </p> 
-    
-        <p><input type = "submit" value = "What was popular?" /></p> -->
-
-    
-
+  <h1 class = 'header'> I wonder what anime was popular back then...</h1>
+    <div id="form">
+      <form class = 'form' action = "http://localhost:8000/views" method = "POST">
+        <p class="question">What Year <input type = "text" name = "year" /></p>
+        <p class="question">What Season <input type = "text" name = "season" /></p>
+        <p><input type = "submit" value = "Submit" /></p>
+      </form>
+    </div>
 </body>
 </html>
 
